@@ -139,7 +139,74 @@ void menuConversorDeTempo()
 }
 void menuConversorDeArea()
 {
-}
+ int opcao;
+  float valor, resultado;
+
+  do
+  {
+    printf(" == Conversor de Area == \n");
+    printf("[1]- Metro quadrado para Centimetro quadrado \n");
+    printf("[2]- Metro quadrado para Quilometro quadrado \n");
+    printf("[3]- Centimetro quadrado para Metro quadrado \n");
+    printf("[4]- Centimetro quadrado para Quilometro quadrado \n");
+    printf("[5]- Quilometro quadrado para Centimetro quadrado \n");
+    printf("[6]- Quilometro quadrado para Metro quadrado \n");
+    printf("[7]- Voltar ao menu principal \n");
+    printf("Escolha uma conversão: \n");
+    scanf("%d", &opcao);
+    system("cls");
+
+    if (opcao < 1 || opcao > 7)
+    {
+      printf("Opção inválida! \n");
+    }
+    else if (opcao == 7)
+    {
+      printf("Retornando ao menu principal... \n");
+    }
+    else
+    {
+      printf("Insira o valor para conversão: \n");
+      scanf("%f", &valor);
+    }
+
+    switch (opcao)
+    {
+
+    case 1:
+      resultado = valor * 100*100;
+      printf("%.2f Metro quadrado = %.2f Centimetro quadrado \n", valor, resultado);
+      break;
+
+    case 2:
+      resultado = valor * 0.000001;
+      printf("%.2f Metro quadrado = %.7f Quilometro quadrado \n", valor, resultado);
+      break;
+
+    case 3:
+      resultado = valor * 0.0001;
+      printf("%.2f Centimetro quadrado = %.5f Metro quadrado \n", valor, resultado);
+      break;
+
+    case 4:
+      resultado = valor * 0.00000000001;
+      printf("%.2f Centimetro quadrado  = %.12f Quilometro quadrado \n", valor, resultado);
+      break;
+
+    case 5:
+      resultado = valor * 10000000000;
+      printf("%.2f Quilometro quadrado  = %.2f Centimetro quadrado \n", valor, resultado);
+      break;
+
+    case 6:
+      resultado = valor * 10000000;
+      printf("%.2f Quilometro quadrado = %.2f Metro quadrado \n", valor, resultado);
+      break;
+    }
+
+  } while (opcao != 7);
+} 
+
 int main()
 {
 
