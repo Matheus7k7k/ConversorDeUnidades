@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <locale.h>
 
 void menuPrincipal()
 {
@@ -26,7 +27,7 @@ void menuConversorDeMassa()
     switch (opcaoConversaoMassa)
     {
     case 1:
-      printf("Informe o valor em gramas que serÃ£o convertido a quilos  \n");
+      printf("Informe o valor em gramas que serão convertido a quilos  \n");
       scanf("%f", &valorConversao);
       resultadoConversao = valorConversao / 1000;
       printf(" %.2f gramas  = a %.2f quilos . \n", valorConversao, resultadoConversao);
@@ -39,7 +40,7 @@ void menuConversorDeMassa()
       break;
 
     case 3:
-      printf("Informe o valor em quilos que sÃ£o convertidos a toneladas \n");
+      printf("Informe o valor em quilos que são convertidos a toneladas \n");
       scanf("%f", &valorConversao);
       resultadoConversao = valorConversao / 1000;
       printf(" %.2f quilos e = a %.2f toneladas . \n", valorConversao, resultadoConversao);
@@ -49,7 +50,7 @@ void menuConversorDeMassa()
       printf("Voltando ao menu principal...\n");
       break;
     default:
-      printf("OpÃ§Ã£o invÃ¡lida. Tente novamente.\n");
+      printf("Opção inválida. Tente novamente.\n");
       break;
     }
   } while (opcaoConversaoMassa != 0);
@@ -60,6 +61,59 @@ void menuConversorDeComprimento()
 }
 void menuConversorDeVolume()
 {
+  int opcao;
+  float valor, resultado;
+
+  printf("Conversor de unidade de volume \n");
+  printf("[1]- Litro para mililitros \n");
+  printf("[2]- Litros para metros cúbicos \n");
+  printf("[3]- Mililitros para litros \n");
+  printf("[4]- Mililitros para metros cúbicos \n");
+  printf("[5]- Metros cúbicos para litros \n");
+  printf("[6]- Metros cúbicos para mililitros \n");
+  printf("Escolha uma conversão: \n");
+  scanf("%d",&opcao);
+
+  printf("Insira o valor para conversão: \n");
+  scanf("%f",&valor);
+
+  switch(opcao){
+
+      case 1:
+        resultado = valor * 1000;
+        printf("%.2f litros = %.2f mililitros \n",valor,resultado);
+        break;
+
+      case 2:
+        resultado = valor * 0.001;
+        printf("%.2f litros = %.2f metros cúbicos \n",valor,resultado);
+        break;
+
+      case 3:
+        resultado = valor * 0.001;
+        printf("%.2f mililitros = %.2f litros \n",valor,resultado);
+        break;  
+
+      case 4:
+        resultado = valor * 0.000001;
+        printf("%.2f mililitros  = %.2f metros cúbicos \n",valor,resultado);
+        break;  
+
+      case 5:
+        resultado = valor * 1000;
+        printf("%.2f metros cúbicos = %.2f litros \n",valor,resultado);
+        break;
+
+      case 6:
+        resultado = valor * 1000000;
+        printf("%.2f metros cúbicos = %.2f mililitros \n",valor,resultado);
+        break;
+
+      default:
+        printf("Opção inválida \n");    
+
+
+  }
 }
 void menuConversorDeTemperatura()
 {
@@ -73,7 +127,7 @@ void menuConversorDeArea()
 }
 int main()
 {
-
+  setlocale(LC_ALL, "Portuguese_Brazil");
   int opcao;
 
   do
@@ -94,6 +148,7 @@ int main()
 
     case 3:
       menuConversorDeVolume();
+      return 0;
       break;
     case 4:
       menuConversorDeTemperatura();
