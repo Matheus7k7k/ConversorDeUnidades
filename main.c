@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <locale.h>
+#include <stdlib.h>
 
 void menuPrincipal()
 {
@@ -64,18 +65,28 @@ void menuConversorDeVolume()
   int opcao;
   float valor, resultado;
 
-  printf("Conversor de unidade de volume \n");
-  printf("[1]- Litro para mililitros \n");
-  printf("[2]- Litros para metros cúbicos \n");
-  printf("[3]- Mililitros para litros \n");
-  printf("[4]- Mililitros para metros cúbicos \n");
-  printf("[5]- Metros cúbicos para litros \n");
-  printf("[6]- Metros cúbicos para mililitros \n");
-  printf("Escolha uma conversão: \n");
-  scanf("%d",&opcao);
+  do{
+    printf(" == Conversor de unidade de volume == \n");
+    printf("[1]- Litro para mililitros \n");
+    printf("[2]- Litros para metros cúbicos \n");
+    printf("[3]- Mililitros para litros \n");
+    printf("[4]- Mililitros para metros cúbicos \n");
+    printf("[5]- Metros cúbicos para litros \n");
+    printf("[6]- Metros cúbicos para mililitros \n");
+    printf("[7]- Voltar ao menu principal \n");
+    printf("Escolha uma conversão: \n");
+    scanf("%d",&opcao);
+    system("cls");
 
-  printf("Insira o valor para conversão: \n");
-  scanf("%f",&valor);
+    if(opcao < 1 || opcao > 7){
+      printf("Opção inválida! \n");
+
+    }else if(opcao == 7){
+      printf("Retomando ao menu principal... \n");
+    }else{
+      printf("Insira o valor para conversão: \n");
+      scanf("%f",&valor);
+    }
 
   switch(opcao){
 
@@ -109,12 +120,12 @@ void menuConversorDeVolume()
         printf("%.2f metros cúbicos = %.2f mililitros \n",valor,resultado);
         break;
 
-      default:
-        printf("Opção inválida \n");    
+  }   
 
+  }while(opcao != 7);
 
-  }
 }
+
 void menuConversorDeTemperatura()
 {
 }
@@ -148,7 +159,6 @@ int main()
 
     case 3:
       menuConversorDeVolume();
-      return 0;
       break;
     case 4:
       menuConversorDeTemperatura();
