@@ -136,6 +136,71 @@ void menuConversorDeTemperatura()
 
 void menuConversorDeTempo()
 {
+  int opcaoConversaoTempo;
+  float valor, resultado;
+
+  do
+  {
+    printf(" == Conversor de unidade de tempo == \n");
+    printf("1 - Segundos para minutos\n");
+    printf("2 - Minutos para horas\n");
+    printf("3 - Horas para dias\n");
+    printf("4 - Dias para semanas\n");
+    printf("5 - Semanas para meses (aproximado)\n");
+    printf("6 - Meses para anos\n");
+    printf("0 - Voltar ao menu principal\n");
+    printf("Escolha uma opção de conversão: ");
+    scanf("%d", &opcaoConversaoTempo);
+
+    if (opcaoConversaoTempo < 0 || opcaoConversaoTempo > 6)
+    {
+      printf("Opção inválida! Tente novamente.\n");
+      continue;
+    }
+
+    if (opcaoConversaoTempo == 0)
+    {
+      printf("Voltando ao menu principal...\n");
+      break;
+    }
+
+    printf("Insira o valor para conversão: ");
+    scanf("%f", &valor);
+
+    switch (opcaoConversaoTempo)
+    {
+    case 1:
+      resultado = valor / 60;
+      printf("%.2f segundos = %.2f minutos\n", valor, resultado);
+      break;
+
+    case 2:
+      resultado = valor / 60;
+      printf("%.2f minutos = %.2f horas\n", valor, resultado);
+      break;
+
+    case 3:
+      resultado = valor / 24;
+      printf("%.2f horas = %.2f dias\n", valor, resultado);
+      break;
+
+    case 4:
+      resultado = valor / 7;
+      printf("%.2f dias = %.2f semanas\n", valor, resultado);
+      break;
+
+    case 5:
+      resultado = valor / 4.345; // Média de semanas em um mês
+      printf("%.2f semanas = %.2f meses\n", valor, resultado);
+      break;
+
+    case 6:
+      resultado = valor / 12;
+      printf("%.2f meses = %.2f anos\n", valor, resultado);
+      break;
+    }
+
+  } while (opcaoConversaoTempo != 0);
 }
 void menuConversorDeArea()
 {
