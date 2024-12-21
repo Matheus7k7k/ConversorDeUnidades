@@ -136,6 +136,69 @@ void menuConversorDeTemperatura()
 
 void menuConversorDeTempo()
 {
+  int o;
+    float value, answer;
+    do
+    {
+        printf("digite para converter: \n[1]-Horas em segundos\n");
+        printf("[2]-Horas em minutos\n");
+        printf("[3]-minutos em segundos\n");
+        printf("[4]-minutos em horas\n");
+        printf("[5]-segundos em minutos\n");
+        printf("[6]-segundos em horas\n");
+        printf("[0]-encerrar a conversao\n");
+        scanf("%d", &o);
+        switch (o)
+        {
+        case 0:
+            printf("encerrando...\n");
+            break;
+        case 1:
+            printf("digite o valor em horas: \n");
+            scanf("%f", &value);
+            answer = value * 3600;
+            printf("%.2f horas equivalem a %.2f segundos\n", value, answer);
+            break;
+
+        case 2:
+            printf("digite o valor em horas: \n");
+            scanf("%f", &value);
+            answer = value * 60;
+            printf("%.2f horas equivalem a %.2f minutos\n", value, answer);
+            break;
+
+        case 3:
+            printf("digite o valor em minutos: \n");
+            scanf("%f", &value);
+            answer = value * 60;
+            printf("%.2f minutos equivalem a %.2f segundos\n", value, answer);
+            break;
+
+        case 4:
+            printf("digite o valor em minutos: \n");
+            scanf("%f", &value);
+            answer = value / 60;
+            printf("%.2f minutos equivalem a %.2f horas\n", value, answer);
+            break;
+
+        case 5:
+            printf("digite o valor em segundos: \n");
+            scanf("%f", &value);
+            answer = value / 60;
+            printf("%.2f segundos equivalem a %.2f minutos\n", value, answer);
+            break;
+
+        case 6:
+            printf("digite o valor em segundos: \n");
+            scanf("%f", &value);
+            answer = value / 3600;
+            printf("%.2f segundos equivalem a %.2f horas\n", value, answer);
+            break;
+        default:
+            printf("opcao invalida\n");
+            break;
+        }
+    } while (o != 0);
 }
 void menuConversorDeArea()
 {
