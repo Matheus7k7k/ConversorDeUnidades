@@ -137,7 +137,7 @@ void menuConversorDeTemperatura()
 void menuConversorDeTempo()
 {
   int o;
-    float value, answer;
+    float valor, resposta;
     do
     {
         printf("digite para converter: \n[1]-Horas em segundos\n");
@@ -155,44 +155,44 @@ void menuConversorDeTempo()
             break;
         case 1:
             printf("digite o valor em horas: \n");
-            scanf("%f", &value);
-            answer = value * 3600;
-            printf("%.2f horas equivalem a %.2f segundos\n", value, answer);
+            scanf("%f", &valor);
+            resposta = valor * 3600;
+            printf("%.2f horas equivalem a %.2f segundos\n", valor, resposta);
             break;
 
         case 2:
             printf("digite o valor em horas: \n");
-            scanf("%f", &value);
-            answer = value * 60;
-            printf("%.2f horas equivalem a %.2f minutos\n", value, answer);
+            scanf("%f", &valor);
+            resposta = valor * 60;
+            printf("%.2f horas equivalem a %.2f minutos\n", valor, resposta);
             break;
 
         case 3:
             printf("digite o valor em minutos: \n");
-            scanf("%f", &value);
-            answer = value * 60;
-            printf("%.2f minutos equivalem a %.2f segundos\n", value, answer);
+            scanf("%f", &valor);
+            resposta = valor * 60;
+            printf("%.2f minutos equivalem a %.2f segundos\n", valor, resposta);
             break;
 
         case 4:
             printf("digite o valor em minutos: \n");
-            scanf("%f", &value);
-            answer = value / 60;
-            printf("%.2f minutos equivalem a %.2f horas\n", value, answer);
+            scanf("%f", &valor);
+            resposta = valor / 60;
+            printf("%.2f minutos equivalem a %.2f horas\n", valor, resposta);
             break;
 
         case 5:
             printf("digite o valor em segundos: \n");
-            scanf("%f", &value);
-            answer = value / 60;
-            printf("%.2f segundos equivalem a %.2f minutos\n", value, answer);
+            scanf("%f", &valor);
+            resposta = valor / 60;
+            printf("%.2f segundos equivalem a %.2f minutos\n", valor, resposta);
             break;
 
         case 6:
             printf("digite o valor em segundos: \n");
-            scanf("%f", &value);
-            answer = value / 3600;
-            printf("%.2f segundos equivalem a %.2f horas\n", value, answer);
+            scanf("%f", &valor);
+            resposta = valor / 3600;
+            printf("%.2f segundos equivalem a %.2f horas\n", valor, resposta);
             break;
         default:
             printf("opcao invalida\n");
