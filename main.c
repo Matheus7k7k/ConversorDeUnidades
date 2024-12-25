@@ -136,71 +136,69 @@ void menuConversorDeTemperatura()
 
 void menuConversorDeTempo()
 {
-  int opcaoConversaoTempo;
-  float valor, resultado;
-
-  do
-  {
-    printf(" == Conversor de Unidade de Tempo == \n");
-    printf("1 - Segundos para Minutos\n");
-    printf("2 - Minutos para Horas\n");
-    printf("3 - Horas para Dias\n");
-    printf("4 - Dias para Semanas\n");
-    printf("5 - Semanas para Meses (aproximado)\n");
-    printf("6 - Meses para Anos\n");
-    printf("0 - Voltar ao Menu Principal\n");
-    printf("Escolha uma opção de conversão: ");
-    scanf("%d", &opcaoConversaoTempo);
-
-    if (opcaoConversaoTempo < 0 || opcaoConversaoTempo > 6)
+  int o;
+    float valor, resposta;
+    do
     {
-      printf("Opção inválida! Tente novamente.\n");
-      continue;
-    }
+        printf("digite para converter: \n[1]-Horas em segundos\n");
+        printf("[2]-Horas em minutos\n");
+        printf("[3]-minutos em segundos\n");
+        printf("[4]-minutos em horas\n");
+        printf("[5]-segundos em minutos\n");
+        printf("[6]-segundos em horas\n");
+        printf("[0]-encerrar a conversao\n");
+        scanf("%d", &o);
+        switch (o)
+        {
+        case 0:
+            printf("encerrando...\n");
+            break;
+        case 1:
+            printf("digite o valor em horas: \n");
+            scanf("%f", &valor);
+            resposta = valor * 3600;
+            printf("%.2f horas equivalem a %.2f segundos\n", valor, resposta);
+            break;
 
-    if (opcaoConversaoTempo == 0)
-    {
-      printf("Voltando ao menu principal...\n");
-      break;
-    }
+        case 2:
+            printf("digite o valor em horas: \n");
+            scanf("%f", &valor);
+            resposta = valor * 60;
+            printf("%.2f horas equivalem a %.2f minutos\n", valor, resposta);
+            break;
 
-    printf("Insira o valor para conversão: ");
-    scanf("%f", &valor);
+        case 3:
+            printf("digite o valor em minutos: \n");
+            scanf("%f", &valor);
+            resposta = valor * 60;
+            printf("%.2f minutos equivalem a %.2f segundos\n", valor, resposta);
+            break;
 
-    switch (opcaoConversaoTempo)
-    {
-    case 1:
-      resultado = valor / 60;
-      printf("%.2f segundos equivalem a %.2f minutos\n", valor, resultado);
-      break;
+        case 4:
+            printf("digite o valor em minutos: \n");
+            scanf("%f", &valor);
+            resposta = valor / 60;
+            printf("%.2f minutos equivalem a %.2f horas\n", valor, resposta);
+            break;
 
-    case 2:
-      resultado = valor / 60;
-      printf("%.2f minutos equivalem a %.2f horas\n", valor, resultado);
-      break;
+        case 5:
+            printf("digite o valor em segundos: \n");
+            scanf("%f", &valor);
+            resposta = valor / 60;
+            printf("%.2f segundos equivalem a %.2f minutos\n", valor, resposta);
+            break;
 
-    case 3:
-      resultado = valor / 24;
-      printf("%.2f horas equivalem a %.2f dias\n", valor, resultado);
-      break;
-
-    case 4:
-      resultado = valor / 7;
-      printf("%.2f dias equivalem a %.2f semanas\n", valor, resultado);
-      break;
-
-    case 5:
-      resultado = valor / 4.345; // Média de semanas em um mês
-      printf("%.2f semanas equivalem a %.2f meses\n", valor, resultado);
-      break;
-
-    case 6:
-      resultado = valor / 12;
-      printf("%.2f meses equivalem a %.2f anos\n", valor, resultado);
-      break;
-    }
-
-  } while (opcaoConversaoTempo != 0);
+        case 6:
+            printf("digite o valor em segundos: \n");
+            scanf("%f", &valor);
+            resposta = valor / 3600;
+            printf("%.2f segundos equivalem a %.2f horas\n", valor, resposta);
+            break;
+        default:
+            printf("opcao invalida\n");
+            break;
+        }
+    } while (o != 0);
 }
 void menuConversorDeArea()
 {
