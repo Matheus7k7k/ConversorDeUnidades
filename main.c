@@ -132,6 +132,72 @@ void menuConversorDeVolume()
 
 void menuConversorDeTemperatura()
 {
+  int opcaoConversaoTemperatura;
+  float valor, resultado;
+  do
+  {
+    printf("------- Conversor de Temperatura -------- \n");
+    printf("1 - Converter Celsius para Kelvin \n");
+    printf("2 - Converter Celsius para Fahrenheit \n");
+    printf("3 - Converter Kelvin para Fahrenheit \n");
+    printf("4 - Converter Kelvin para Celsius\n");
+    printf("5 - Converter Fahrenheit para Celsius \n");
+    printf("6 - Converter Fahrenheit para Kelvin\n");
+    printf("0 - Voltar ao menu principal\n");
+    printf("-----------------------------------------\n");
+    printf("Escolha uma opcao de conversao \n ");
+    scanf("%d", &opcaoConversaoTemperatura);
+    switch (opcaoConversaoTemperatura)
+    {
+    case 1:
+      printf("Informe o valor em Celsius que serão convertido para Kelvin  \n");
+      scanf("%f", &valor);
+      resultado = valor + 273.15;
+      printf(" %.2f Celsius é = a %.2f Kelvin . \n", valor, resultado);
+      break;
+    case 2:
+      printf("Informe o valor em Celsius que serão convertidos para Fahrenheit \n");
+      scanf("%f", &valor);
+      resultado = ((valor*1.8)+32);
+      printf(" %.2f Celsius é = a %.2f Fahrenheit . \n", valor, resultado);
+      break;
+
+    case 3:
+      printf("Informe o valor em Kelvin que serão convertidos para Fahrenheit \n");
+      scanf("%f", &valor);
+      resultado = ((valor - 273.15) *1.8 + 32);
+      printf(" %.2f Kelvin é = a %.2f Fahrenheit . \n", valor, resultado);
+      break;
+
+    case 4:
+      printf("Informe o valor em Kelvin que serão convertidos para Celsius \n");
+      scanf("%f", &valor);
+      resultado = valor - 273.15;
+      printf(" %.2f Kelvin é = a %.2f Celsius . \n", valor, resultado);
+      break;
+
+      case 5:
+      printf("Informe o valor em Fahrenheit que serão convertidos para Celsius \n");
+      scanf("%f", &valor);
+      resultado = ((valor - 32)* 5/9) ;
+      printf(" %.2f Fahrenheit é = a %.2f Celsius. \n", valor, resultado);
+      break;
+
+      case 6:
+      printf("Informe o valor em Fahrenheit que serão convertidos para Kelvin \n");
+      scanf("%f", &valor);
+      resultado = ((valor-32)* 5/9+ 273.15);
+      printf(" %.2f Fahrenheit= a %.2f Kelvin. \n", valor, resultado);
+      break;
+
+    case 0:
+      printf("Voltando ao menu principal...\n");
+      break;
+    default:
+      printf("Opção inválida. Tente novamente.\n");
+      break;
+    }
+  } while (opcaoConversaoTemperatura!= 0);
 }
 
 void menuConversorDeTempo()
