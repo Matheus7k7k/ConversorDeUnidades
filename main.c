@@ -419,7 +419,7 @@ int main()
       menuConversorDeTempo();
       break;
     case 0:
-      printf("Encerrando programa");
+      printf("Encerrando programa...");
       break;
     case 6:
       menuConversorDeArea();
@@ -430,6 +430,5 @@ int main()
       break;
     }
   } while (opcao != 0);
-  printf("saindo do programa \n");
   return 0;
 }
