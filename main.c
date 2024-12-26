@@ -11,6 +11,76 @@ void menuPrincipal()
   printf(" 4 - Para conversor de temperatura \n");
   printf(" 5 - Para conversor de tempo \n");
   printf(" 6 - Para conversor de area \n");
+  printf(" 7 - Para conversor de comprimento \n");
+}
+
+float converterParaMetros(float valor, int unidadeOrigem) {
+    switch (unidadeOrigem) {
+        case 1: return valor / 1e6; // Micrômetro para metro
+        case 2: return valor / 1000; // Milímetro para metro
+        case 3: return valor / 100; // Centímetro para metro
+        case 4: return valor; // Metro
+        case 5: return valor * 1000; // Quilômetro para metro
+        default:
+            printf("Unidade de origem inválida.\n");
+            return -1;
+    }
+}
+
+float converterDeMetros(float valorEmMetros, int unidadeDestino) {
+    switch (unidadeDestino) {
+        case 1: return valorEmMetros * 1e6; // Metro para micrômetro
+        case 2: return valorEmMetros * 1000; // Metro para milímetro
+        case 3: return valorEmMetros * 100; // Metro para centímetro
+        case 4: return valorEmMetros; // Metro
+        case 5: return valorEmMetros / 1000; // Metro para quilômetro
+        default:
+            printf("Unidade de destino inválida.\n");
+            return -1;
+    }
+}
+
+void menuConversorDeComprimento(){
+  int unidadeOrigem = 0, unidadeDestino = 0, sair = 0;
+    float valor, valorEmMetros, valorConvertido;
+
+    while (!sair) {
+        printf("\nMenu de Conversão de Comprimento\n");
+        printf("1 - Micrômetro\n");
+        printf("2 - Milímetro\n");
+        printf("3 - Centímetro\n");
+        printf("4 - Metro\n");
+        printf("5 - Quilômetro\n");
+        printf("6 - Sair\n");
+
+        printf("Escolha a unidade de origem (1-6): ");
+        scanf("%d", &unidadeOrigem);
+
+        if (unidadeOrigem == 6) {
+            sair = 1;
+            continue;
+        }
+
+        printf("Escolha a unidade de destino (1-5): ");
+        scanf("%d", &unidadeDestino);
+
+        printf("Digite o valor na unidade de origem: ");
+        scanf("%f", &valor);
+
+        valorEmMetros = converterParaMetros(valor, unidadeOrigem);
+        if (valorEmMetros == -1) {
+            printf("Erro na conversão da unidade de origem.\n");
+            continue;
+        }
+
+        valorConvertido = converterDeMetros(valorEmMetros, unidadeDestino);
+        if (valorConvertido == -1) {
+            printf("Erro na conversão para a unidade de destino.\n");
+            continue;
+        }
+
+        printf("O valor convertido é: %.6f\n", valorConvertido);
+    }
 }
 
 void menuConversorDeMassa()
@@ -29,7 +99,7 @@ void menuConversorDeMassa()
     switch (opcaoConversaoMassa)
     {
     case 1:
-      printf("Informe o valor em gramas que serão convertido a quilos  \n");
+      printf("Informe o valor em gramas que serÃ£o convertido a quilos  \n");
       scanf("%f", &valorConversao);
       resultadoConversao = valorConversao / 1000;
       printf(" %.2f gramas  = a %.2f quilos . \n", valorConversao, resultadoConversao);
@@ -42,7 +112,7 @@ void menuConversorDeMassa()
       break;
 
     case 3:
-      printf("Informe o valor em quilos que são convertidos a toneladas \n");
+      printf("Informe o valor em quilos que sÃ£o convertidos a toneladas \n");
       scanf("%f", &valorConversao);
       resultadoConversao = valorConversao / 1000;
       printf(" %.2f quilos e = a %.2f toneladas . \n", valorConversao, resultadoConversao);
@@ -52,7 +122,7 @@ void menuConversorDeMassa()
       printf("Voltando ao menu principal...\n");
       break;
     default:
-      printf("Opção inválida. Tente novamente.\n");
+      printf("OpÃ§Ã£o invÃ¡lida. Tente novamente.\n");
       break;
     }
   } while (opcaoConversaoMassa != 0);
@@ -121,19 +191,19 @@ void menuConversorDeVolume()
   {
     printf(" == Conversor de unidade de volume == \n");
     printf("[1]- Litro para mililitros \n");
-    printf("[2]- Litros para metros cúbicos \n");
+    printf("[2]- Litros para metros cÃºbicos \n");
     printf("[3]- Mililitros para litros \n");
-    printf("[4]- Mililitros para metros cúbicos \n");
-    printf("[5]- Metros cúbicos para litros \n");
-    printf("[6]- Metros cúbicos para mililitros \n");
+    printf("[4]- Mililitros para metros cÃºbicos \n");
+    printf("[5]- Metros cÃºbicos para litros \n");
+    printf("[6]- Metros cÃºbicos para mililitros \n");
     printf("[7]- Voltar ao menu principal \n");
-    printf("Escolha uma conversão: \n");
+    printf("Escolha uma conversÃ£o: \n");
     scanf("%d", &opcao);
     system("cls");
 
     if (opcao < 1 || opcao > 7)
     {
-      printf("Opção inválida! \n");
+      printf("OpÃ§Ã£o invÃ¡lida! \n");
     }
     else if (opcao == 7)
     {
@@ -141,7 +211,7 @@ void menuConversorDeVolume()
     }
     else
     {
-      printf("Insira o valor para conversão: \n");
+      printf("Insira o valor para conversÃ£o: \n");
       scanf("%f", &valor);
     }
 
@@ -155,7 +225,7 @@ void menuConversorDeVolume()
 
     case 2:
       resultado = valor * 0.001;
-      printf("%.2f litros = %.2f metros cúbicos \n", valor, resultado);
+      printf("%.2f litros = %.2f metros cÃºbicos \n", valor, resultado);
       break;
 
     case 3:
@@ -165,17 +235,17 @@ void menuConversorDeVolume()
 
     case 4:
       resultado = valor * 0.000001;
-      printf("%.2f mililitros  = %.2f metros cúbicos \n", valor, resultado);
+      printf("%.2f mililitros  = %.2f metros cÃºbicos \n", valor, resultado);
       break;
 
     case 5:
       resultado = valor * 1000;
-      printf("%.2f metros cúbicos  = %.2f litros \n", valor, resultado);
+      printf("%.2f metros cÃºbicos  = %.2f litros \n", valor, resultado);
       break;
 
     case 6:
       resultado = valor * 1000000;
-      printf("%.2f metros cúbicos = %.2f mililitros \n", valor, resultado);
+      printf("%.2f metros cÃºbicos = %.2f mililitros \n", valor, resultado);
       break;
     }
 
@@ -202,41 +272,41 @@ void menuConversorDeTemperatura()
     switch (opcaoConversaoTemperatura)
     {
     case 1:
-      printf("Informe o valor em Celsius que serão convertido para Kelvin  \n");
+      printf("Informe o valor em Celsius que serÃ£o convertido para Kelvin  \n");
       scanf("%f", &valor);
       resultado = valor + 273.15;
-      printf(" %.2f Celsius é = a %.2f Kelvin . \n", valor, resultado);
+      printf(" %.2f Celsius Ã© = a %.2f Kelvin . \n", valor, resultado);
       break;
     case 2:
-      printf("Informe o valor em Celsius que serão convertidos para Fahrenheit \n");
+      printf("Informe o valor em Celsius que serÃ£o convertidos para Fahrenheit \n");
       scanf("%f", &valor);
       resultado = ((valor * 1.8) + 32);
-      printf(" %.2f Celsius é = a %.2f Fahrenheit . \n", valor, resultado);
+      printf(" %.2f Celsius Ã© = a %.2f Fahrenheit . \n", valor, resultado);
       break;
 
     case 3:
-      printf("Informe o valor em Kelvin que serão convertidos para Fahrenheit \n");
+      printf("Informe o valor em Kelvin que serÃ£o convertidos para Fahrenheit \n");
       scanf("%f", &valor);
       resultado = ((valor - 273.15) * 1.8 + 32);
-      printf(" %.2f Kelvin é = a %.2f Fahrenheit . \n", valor, resultado);
+      printf(" %.2f Kelvin Ã© = a %.2f Fahrenheit . \n", valor, resultado);
       break;
 
     case 4:
-      printf("Informe o valor em Kelvin que serão convertidos para Celsius \n");
+      printf("Informe o valor em Kelvin que serÃ£o convertidos para Celsius \n");
       scanf("%f", &valor);
       resultado = valor - 273.15;
-      printf(" %.2f Kelvin é = a %.2f Celsius . \n", valor, resultado);
+      printf(" %.2f Kelvin Ã© = a %.2f Celsius . \n", valor, resultado);
       break;
 
     case 5:
-      printf("Informe o valor em Fahrenheit que serão convertidos para Celsius \n");
+      printf("Informe o valor em Fahrenheit que serÃ£o convertidos para Celsius \n");
       scanf("%f", &valor);
       resultado = ((valor - 32) * 5 / 9);
-      printf(" %.2f Fahrenheit é = a %.2f Celsius. \n", valor, resultado);
+      printf(" %.2f Fahrenheit Ã© = a %.2f Celsius. \n", valor, resultado);
       break;
 
     case 6:
-      printf("Informe o valor em Fahrenheit que serão convertidos para Kelvin \n");
+      printf("Informe o valor em Fahrenheit que serÃ£o convertidos para Kelvin \n");
       scanf("%f", &valor);
       resultado = ((valor - 32) * 5 / 9 + 273.15);
       printf(" %.2f Fahrenheit= a %.2f Kelvin. \n", valor, resultado);
@@ -246,7 +316,7 @@ void menuConversorDeTemperatura()
       printf("Voltando ao menu principal...\n");
       break;
     default:
-      printf("Opção inválida. Tente novamente.\n");
+      printf("OpÃ§Ã£o invÃ¡lida. Tente novamente.\n");
       break;
     }
   } while (opcaoConversaoTemperatura != 0);
@@ -333,13 +403,13 @@ void menuConversorDeArea()
     printf("[5]- Quilometro quadrado para Centimetro quadrado \n");
     printf("[6]- Quilometro quadrado para Metro quadrado \n");
     printf("[7]- Voltar ao menu principal \n");
-    printf("Escolha uma conversão: \n");
+    printf("Escolha uma conversÃ£o: \n");
     scanf("%d", &opcao);
     system("cls");
 
     if (opcao < 1 || opcao > 7)
     {
-      printf("Opção inválida! \n");
+      printf("OpÃ§Ã£o invÃ¡lida! \n");
     }
     else if (opcao == 7)
     {
@@ -347,7 +417,7 @@ void menuConversorDeArea()
     }
     else
     {
-      printf("Insira o valor para conversão: \n");
+      printf("Insira o valor para conversÃ£o: \n");
       scanf("%f", &valor);
     }
 
@@ -423,6 +493,9 @@ int main()
       break;
     case 6:
       menuConversorDeArea();
+      break;
+    case 7:
+      menuConversorDeComprimento();
       break;
 
     default:
