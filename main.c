@@ -427,6 +427,7 @@ int main()
 
     default:
       printf("opcao invalida \n ");
+      printf("opcao invalida \n ");
       break;
     }
   } while (opcao != 0);
