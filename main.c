@@ -4,6 +4,7 @@
 
 void menuPrincipal()
 {
+  printf(" 0 - Para sair do programa \n");
   printf(" 1 - Para conversor de massa \n");
   printf(" 2 - Para conversor de velocidade \n");
   printf(" 3 - Para conversor de volume \n");
@@ -18,13 +19,13 @@ void menuConversorDeMassa()
   float valorConversao, resultadoConversao;
   do
   {
-
     printf("1 - Converter gramas em quilos \n");
     printf("2 - Converter quilos em gramas \n");
     printf("3 - Converter quilos em toneladas\n");
     printf("0 - Voltar ao menu principal\n");
     printf("Escolha uma opcao de conversao \n ");
     scanf("%d", &opcaoConversaoMassa);
+
     switch (opcaoConversaoMassa)
     {
     case 1:
@@ -58,57 +59,58 @@ void menuConversorDeMassa()
 }
 
 void menuConversorDeVelocidade()
-{int opcaoConversaoVelocidade;
-    double valorConversao, resultadoDaConversao;
- 
- do{
-    
+{
+  int opcaoConversaoVelocidade;
+  double valorConversao, resultadoDaConversao;
+
+  do
+  {
+
     printf("[1]- Converte km/h para m/s \n");
     printf("[2]- Converte m/s para km/h \n ");
     printf("[3]- Converte km/h para mph\n");
     printf("[4]- Converte mph para km/h \n ");
     printf("[0]- Retorna para o menu principal\n");
     printf(" \nEscolha uma  das opcoes Acima:\n\n");
-    scanf("%d",&opcaoConversaoVelocidade);
-   
+    scanf("%d", &opcaoConversaoVelocidade);
+
     switch (opcaoConversaoVelocidade)
     {
-     case 0 :
-    printf("Retornando para o Menu principal...\n ");
-    break;
-    
-     case 1 :
-    printf("Informe o valor da velocidade  em km/h que sera convertido em m/s:\n ");
-    scanf(" %lf", &valorConversao);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-        resultadoDaConversao= valorConversao /3.6;
-        printf("%.2lf km/h e  = %.2lf m/s \n ",valorConversao,resultadoDaConversao);
-        break;
-     case 2 :
-    printf("Informe o valor da velocidade em m/s que sera convertido em km/h: \n");
-    scanf(" %lf", &valorConversao);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
-        resultadoDaConversao= valorConversao *3.6;
-        printf("%.2lf m/s  e = %.2lf km/h \n",valorConversao,resultadoDaConversao);
-        break;
-         case 3 :
-    printf("Informe o valor da velocidade  em km/h que sera convertido em mph:\n ");
-    scanf(" %lf", &valorConversao);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-        resultadoDaConversao= valorConversao /1.60934;
-        printf("%.2lf km/h e  = %.2lf mph \n ",valorConversao,resultadoDaConversao);
-        break;
-     case 4 :
-    printf("Informe o valor  em mph que sera convertido em km/h: \n");
-    scanf(" %lf", &valorConversao);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
-        resultadoDaConversao= valorConversao *1.60934;
-        printf("%.2lf mph  e = %.2lf km/h \n",valorConversao,resultadoDaConversao);
-        break;
-    
-     default:
-    printf("Opcao invalida!\n");
-        break;
+    case 0:
+      printf("Retornando para o Menu principal...\n ");
+      break;
+
+    case 1:
+      printf("Informe o valor da velocidade  em km/h que sera convertido em m/s:\n ");
+      scanf(" %lf", &valorConversao);
+      resultadoDaConversao = valorConversao / 3.6;
+      printf("%.2lf km/h e  = %.2lf m/s \n ", valorConversao, resultadoDaConversao);
+      break;
+    case 2:
+      printf("Informe o valor da velocidade em m/s que sera convertido em km/h: \n");
+      scanf(" %lf", &valorConversao);
+      resultadoDaConversao = valorConversao * 3.6;
+      printf("%.2lf m/s  e = %.2lf km/h \n", valorConversao, resultadoDaConversao);
+      break;
+    case 3:
+      printf("Informe o valor da velocidade  em km/h que sera convertido em mph:\n ");
+      scanf(" %lf", &valorConversao);
+      resultadoDaConversao = valorConversao / 1.60934;
+      printf("%.2lf km/h e  = %.2lf mph \n ", valorConversao, resultadoDaConversao);
+      break;
+    case 4:
+      printf("Informe o valor  em mph que sera convertido em km/h: \n");
+      scanf(" %lf", &valorConversao);
+      resultadoDaConversao = valorConversao * 1.60934;
+      printf("%.2lf mph  e = %.2lf km/h \n", valorConversao, resultadoDaConversao);
+      break;
+
+    default:
+      printf("Opcao invalida!\n");
+      break;
     }
- 
- } while (opcaoConversaoVelocidade!=0);
- 
+
+  } while (opcaoConversaoVelocidade != 0);
 }
 void menuConversorDeVolume()
 {
@@ -208,14 +210,14 @@ void menuConversorDeTemperatura()
     case 2:
       printf("Informe o valor em Celsius que serão convertidos para Fahrenheit \n");
       scanf("%f", &valor);
-      resultado = ((valor*1.8)+32);
+      resultado = ((valor * 1.8) + 32);
       printf(" %.2f Celsius é = a %.2f Fahrenheit . \n", valor, resultado);
       break;
 
     case 3:
       printf("Informe o valor em Kelvin que serão convertidos para Fahrenheit \n");
       scanf("%f", &valor);
-      resultado = ((valor - 273.15) *1.8 + 32);
+      resultado = ((valor - 273.15) * 1.8 + 32);
       printf(" %.2f Kelvin é = a %.2f Fahrenheit . \n", valor, resultado);
       break;
 
@@ -226,17 +228,17 @@ void menuConversorDeTemperatura()
       printf(" %.2f Kelvin é = a %.2f Celsius . \n", valor, resultado);
       break;
 
-      case 5:
+    case 5:
       printf("Informe o valor em Fahrenheit que serão convertidos para Celsius \n");
       scanf("%f", &valor);
-      resultado = ((valor - 32)* 5/9) ;
+      resultado = ((valor - 32) * 5 / 9);
       printf(" %.2f Fahrenheit é = a %.2f Celsius. \n", valor, resultado);
       break;
 
-      case 6:
+    case 6:
       printf("Informe o valor em Fahrenheit que serão convertidos para Kelvin \n");
       scanf("%f", &valor);
-      resultado = ((valor-32)* 5/9+ 273.15);
+      resultado = ((valor - 32) * 5 / 9 + 273.15);
       printf(" %.2f Fahrenheit= a %.2f Kelvin. \n", valor, resultado);
       break;
 
@@ -247,78 +249,78 @@ void menuConversorDeTemperatura()
       printf("Opção inválida. Tente novamente.\n");
       break;
     }
-  } while (opcaoConversaoTemperatura!= 0);
+  } while (opcaoConversaoTemperatura != 0);
 }
 
 void menuConversorDeTempo()
 {
   int o;
-    float valor, resposta;
-    do
+  float valor, resposta;
+  do
+  {
+    printf("digite para converter: \n[1]-Horas em segundos\n");
+    printf("[2]-Horas em minutos\n");
+    printf("[3]-minutos em segundos\n");
+    printf("[4]-minutos em horas\n");
+    printf("[5]-segundos em minutos\n");
+    printf("[6]-segundos em horas\n");
+    printf("[0]-encerrar a conversao\n");
+    scanf("%d", &o);
+    switch (o)
     {
-        printf("digite para converter: \n[1]-Horas em segundos\n");
-        printf("[2]-Horas em minutos\n");
-        printf("[3]-minutos em segundos\n");
-        printf("[4]-minutos em horas\n");
-        printf("[5]-segundos em minutos\n");
-        printf("[6]-segundos em horas\n");
-        printf("[0]-encerrar a conversao\n");
-        scanf("%d", &o);
-        switch (o)
-        {
-        case 0:
-            printf("encerrando...\n");
-            break;
-        case 1:
-            printf("digite o valor em horas: \n");
-            scanf("%f", &valor);
-            resposta = valor * 3600;
-            printf("%.2f horas equivalem a %.2f segundos\n", valor, resposta);
-            break;
+    case 0:
+      printf("encerrando...\n");
+      break;
+    case 1:
+      printf("digite o valor em horas: \n");
+      scanf("%f", &valor);
+      resposta = valor * 3600;
+      printf("%.2f horas equivalem a %.2f segundos\n", valor, resposta);
+      break;
 
-        case 2:
-            printf("digite o valor em horas: \n");
-            scanf("%f", &valor);
-            resposta = valor * 60;
-            printf("%.2f horas equivalem a %.2f minutos\n", valor, resposta);
-            break;
+    case 2:
+      printf("digite o valor em horas: \n");
+      scanf("%f", &valor);
+      resposta = valor * 60;
+      printf("%.2f horas equivalem a %.2f minutos\n", valor, resposta);
+      break;
 
-        case 3:
-            printf("digite o valor em minutos: \n");
-            scanf("%f", &valor);
-            resposta = valor * 60;
-            printf("%.2f minutos equivalem a %.2f segundos\n", valor, resposta);
-            break;
+    case 3:
+      printf("digite o valor em minutos: \n");
+      scanf("%f", &valor);
+      resposta = valor * 60;
+      printf("%.2f minutos equivalem a %.2f segundos\n", valor, resposta);
+      break;
 
-        case 4:
-            printf("digite o valor em minutos: \n");
-            scanf("%f", &valor);
-            resposta = valor / 60;
-            printf("%.2f minutos equivalem a %.2f horas\n", valor, resposta);
-            break;
+    case 4:
+      printf("digite o valor em minutos: \n");
+      scanf("%f", &valor);
+      resposta = valor / 60;
+      printf("%.2f minutos equivalem a %.2f horas\n", valor, resposta);
+      break;
 
-        case 5:
-            printf("digite o valor em segundos: \n");
-            scanf("%f", &valor);
-            resposta = valor / 60;
-            printf("%.2f segundos equivalem a %.2f minutos\n", valor, resposta);
-            break;
+    case 5:
+      printf("digite o valor em segundos: \n");
+      scanf("%f", &valor);
+      resposta = valor / 60;
+      printf("%.2f segundos equivalem a %.2f minutos\n", valor, resposta);
+      break;
 
-        case 6:
-            printf("digite o valor em segundos: \n");
-            scanf("%f", &valor);
-            resposta = valor / 3600;
-            printf("%.2f segundos equivalem a %.2f horas\n", valor, resposta);
-            break;
-        default:
-            printf("opcao invalida\n");
-            break;
-        }
-    } while (o != 0);
+    case 6:
+      printf("digite o valor em segundos: \n");
+      scanf("%f", &valor);
+      resposta = valor / 3600;
+      printf("%.2f segundos equivalem a %.2f horas\n", valor, resposta);
+      break;
+    default:
+      printf("opcao invalida\n");
+      break;
+    }
+  } while (o != 0);
 }
 void menuConversorDeArea()
 {
- int opcao;
+  int opcao;
   float valor, resultado;
 
   do
@@ -353,7 +355,7 @@ void menuConversorDeArea()
     {
 
     case 1:
-      resultado = valor * 100*100;
+      resultado = valor * 100 * 100;
       printf("%.2f Metro quadrado = %.2f Centimetro quadrado \n", valor, resultado);
       break;
 
@@ -384,7 +386,7 @@ void menuConversorDeArea()
     }
 
   } while (opcao != 7);
-} 
+}
 
 int main()
 {
@@ -416,6 +418,9 @@ int main()
     case 5:
       menuConversorDeTempo();
       break;
+    case 0:
+      printf("Encerrando programa...");
+      break;
     case 6:
       menuConversorDeArea();
       break;
@@ -425,6 +430,5 @@ int main()
       break;
     }
   } while (opcao != 0);
-  printf("saindo do programa \n");
   return 0;
 }
